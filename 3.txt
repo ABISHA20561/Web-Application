@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Galaxy | Fuel Your Soul</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-color: #2d3436;
+            --bg-color: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Titles & Headings */
+        .main-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 4rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px #eee;
+        }
+
+        .sub-heading {
+            text-align: center;
+            font-size: 1.5rem;
+            border-bottom: 3px solid var(--secondary-color);
+            display: table;
+            margin: 0 auto 30px auto;
+            padding-bottom: 5px;
+        }
+
+        /* Layout & Borders */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 50px; /* Border Curves */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid #ffe6e6;
+        }
+
+        /* Inline Images in Paragraph */
+        .inline-img {
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+            border-radius: 50%;
+        }
+
+        /* Sticky Notes */
+        .sticky-note {
+            background-color: #fff382;
+            padding: 15px;
+            width: 200px;
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 1.2rem;
+            box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            float: right;
+            margin: 10px;
+            border-left: 5px solid #ffd32a;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 15px;
+            overflow: hidden; /* Ensures curves show */
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Striped Pattern */
+        .striped-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .striped-table tr:hover {
+            background-color: #ffeaea;
+        }
+
+        /* Lists */
+        .icon-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .icon-list li::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046771.png'); /* Pizza icon */
+            background-size: cover;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .square-list {
+            list-style-type: square;
+            color: var(--secondary-color);
+        }
+
+        /* Link Hover */
+        .food-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .food-link:hover {
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="main-title">Gourmet Galaxy</h1>
+    <h2 class="sub-heading">Where Every Bite Tells a Story</h2>
+
+    <div class="sticky-note">
+        "One cannot think well, love well, sleep well, if one has not dined well."
+    </div>
+
+    <p>
+        Food is the universal language of <img src="https://cdn-icons-png.flaticon.com/512/2589/2589175.png" class="inline-img" alt="love"> that connects us all. It is not just about calories; it is about the
+        <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" class="inline-img" alt="culture"> we share and the memories we create around the
+        <img src="https://cdn-icons-png.flaticon.com/512/2276/2276931.png" class="inline-img" alt="table">.
+        Nutrition fuels our bodies, but flavors fuel our <img src="https://cdn-icons-png.flaticon.com/512/4416/4416112.png" class="inline-img" alt="happiness">.
+    </p>
+
+    <h3>Why Good Food Matters:</h3>
+    <ul class="icon-list">
+        <li>Boosts your daily energy levels</li>
+        <li>Brings families and friends together</li>
+        <li>Enhances mood and mental clarity</li>
+    </ul>
+
+    <h3>Our Special Categories:</h3>
+    <ul class="square-list">
+        <li>Organic Green Salads</li>
+        <li>Spicy Continental Fusion</li>
+        <li>Artisanal Desserts</li>
+    </ul>
+
+    <h3>Preparation Steps:</h3>
+    <ol>
+        <li>Source fresh local ingredients</li>
+        <li>Season with love and precision</li>
+        <li>Serve hot with a smile</li>
+    </ol>
+
+    <div class="sticky-note" style="float: left; transform: rotate(3deg); background-color: #b3f2ff;">
+        Don't forget to try our Daily Special!
+    </div>
+
+    <h3 style="clear: both; padding-top: 20px;">The Menu Card</h3>
+    <table class="striped-table">
+        <thead>
+            <tr>
+                <th>Dish Name</th>
+                <th>Ingredients</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Truffle Pasta</td>
+                <td>Mushrooms, Cream, Truffle Oil</td>
+                <td>$18.00</td>
+            </tr>
+            <tr>
+                <td>Avocado Toast</td>
+                <td>Sourdough, Egg, Chili Flakes</td>
+                <td>$12.50</td>
+            </tr>
+            <tr>
+                <td>Berry Smoothie</td>
+                <td>Blueberries, Honey, Yogurt</td>
+                <td>$8.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p style="text-align: center; margin-top: 40px;">
+        Explore more delicious recipes at: <br>
+        <a href="https://www.allrecipes.com" class="food-link">Visit My Foodie World</a>
+    </p>
+</div>
+
+</body>
+</html>
