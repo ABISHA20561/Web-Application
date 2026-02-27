@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My CSS Flower Garden</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Keeps the garden neat */
+        }
+
+        /* The Sky Background */
+        .sky {
+            background-color: lightblue;
+            width: 100%;
+            height: 70vh;
+            position: relative;
+        }
+
+        /* The Sun - using border-radius for a circle */
+        .sun {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            box-shadow: 0 0 40px yellow; /* Makes it glow */
+        }
+
+        /* The Grass */
+        .grass {
+            background-color: green;
+            width: 100%;
+            height: 30vh;
+            position: relative;
+            border-top: 10px solid darkgreen;
+        }
+
+        /* The Tree */
+        .tree {
+            position: absolute;
+            bottom: 50px;
+            right: 150px;
+        }
+        .trunk {
+            background-color: brown;
+            width: 40px;
+            height: 150px;
+            margin: 0 auto;
+        }
+        .leaves {
+            background-color: green;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Makes the top round */
+            margin-bottom: -10px;
+        }
+
+        /* Flowers */
+        .flower {
+            position: absolute;
+            bottom: 60px;
+        }
+
+        .stem {
+            background-color: green;
+            width: 5px;
+            height: 60px;
+            margin-left: 22px;
+        }
+
+        .center {
+            background-color: orange;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 2;
+            top: -10px;
+            left: 15px;
+        }
+
+        /* Petal styling using border-radius */
+        .petal {
+            width: 20px;
+            height: 20px;
+            border-radius: 50% 50% 0 50%; /* Fancy curved shape */
+            position: absolute;
+        }
+
+        /* Different Colors for flowers */
+        .red { background-color: red; top: -15px; left: 5px; }
+        .blue { background-color: blue; top: -15px; left: 25px; }
+        .purple { background-color: purple; top: 5px; left: 5px; }
+        .pink { background-color: pink; top: 5px; left: 25px; }
+
+    </style>
+</head>
+<body>
+
+<div class="sky">
+    <div class="sun"></div>
+
+    <div class="tree">
+        <div class="leaves"></div>
+        <div class="trunk"></div>
+    </div>
+</div>
+
+<div class="grass">
+
+    <div class="flower" style="left: 10%;">
+        <div class="center"></div>
+        <div class="petal red"></div>
+        <div class="petal blue"></div>
+        <div class="petal purple"></div>
+        <div class="petal pink"></div>
+        <div class="stem"></div>
+    </div>
+
+    <div class="flower" style="left: 30%;">
+        <div class="center"></div>
+        <div class="petal red" style="background-color: white;"></div>
+        <div class="petal blue" style="background-color: yellow;"></div>
+        <div class="petal purple" style="background-color: orange;"></div>
+        <div class="petal pink" style="background-color: gold;"></div>
+        <div class="stem"></div>
+    </div>
+
+    <div class="flower" style="left: 50%;">
+        <div class="center"></div>
+        <div class="petal red"></div>
+        <div class="petal blue"></div>
+        <div class="petal purple"></div>
+        <div class="petal pink"></div>
+        <div class="stem"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
