@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Day Night Tree</title>
+<style>
+html, body{
+    height:100%;
+}
+#scene{
+    width:100%;
+    height:100%;
+    background:skyblue;
+    position:relative;
+
+    transition:2s;
+}
+#sun{
+    width:90px;
+    height:90px;
+    background:yellow;
+    border-radius:50%;.
+    position:absolute;
+    top:60px;
+    left:80%;
+    transition:3s;
+}
+.tree{
+    position:absolute;
+    bottom:80px;
+    transition:1s;
+}
+.leaves{
+    width:0;
+    height:0;
+    border-left:45px solid transparent;
+    border-right:45px solid transparent;
+    border-bottom:90px solid green;
+}
+.bark{
+    width:24px;
+    height:50px;
+    background:brown;
+    margin-left:33px;
+}
+#t1{ left:5%; }
+#t2{ left:18%; }
+#t3{ left:32%; }
+#t4{ left:46%; }
+#t5{ left:60%; }
+#t6{ left:74%; }
+.bird{
+    position:absolute;
+    font-size:34px;
+    transition:1s;
+}
+#b1{ top:20%; left:10%; }
+#b2{ top:25%; left:30%; }
+#b3{ top:18%; left:50%; }
+#b4{ top:22%; left:70%; }
+button{
+    position:absolute;
+    top:10px;
+    left:10px;
+    padding:10px;
+    z-index:100;
+}
+</style>
+</head>
+<body>
+<div id="scene">
+<div id="sun"></div>
+<div class="tree" id="t1"><div class="leaves"></div><div class="bark"></div></div>
+<div class="tree" id="t2"><div class="leaves"></div><div class="bark"></div></div>
+<div class="tree" id="t3"><div class="leaves"></div><div class="bark"></div></div>
+<div class="tree" id="t4"><div class="leaves"></div><div class="bark"></div></div>
+<div class="tree" id="t5"><div class="leaves"></div><div class="bark"></div></div>
+<div class="tree" id="t6"><div class="leaves"></div><div class="bark"></div></div>
+<!-- BIRDS -->
+<div class="bird" id="b1">🐦</div>
+<div class="bird" id="b2">🐦</div>
+<div class="bird" id="b3">🐦</div>
+<div class="bird" id="b4">🐦</div>
+</div>
+<button onclick="pressMe()">PRESS ME</button>
+<audio id="chirp" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+<audio id="switch">
+    <source src="https://www.soundjay.com/buttons/sounds/button-16.mp3">
+</audio>
+<script>
+var clickCount = 0;
+var isDay = true;
+var trees = document.getElementsByClassName("tree");
+var scene = document.getElementById("scene");
+var sun = document.getElementById("sun");
+var chirp = document.getElementById("chirp");
+var sw = document.getElementById("switch");
+var soundStarted = false;
+function startSound(){
+    if(!soundStarted){
+        chirp.volume = 0.3;
+        chirp.play();
+        soundStarted = true;
+    }
+}
+function pressMe(){
+    startSound();
+    clickCount++;
+    if(isDay){
+        for(var i=0;i<trees.length;i++){
+            trees[i].style.transform += " scaleY(1.08)";
+        }
+    }
+    if(!isDay){
+        for(var i=0;i<trees.length;i++){
+            trees[i].style.transform += " scaleY(0.92)";
+        }
+    }
+    if(clickCount >= 5){
+        clickCount = 0;
+
+        if(isDay){
+            toNight();
+        }
+        else{
+            toDay();
+        }
+
+        isDay = !isDay;
+    }
+}
+function toNight(){
+    scene.style.background = "#0b0b2b";
+    sun.style.top = "90%";
+    sw.play();
+}
+function toDay(){
+    scene.style.background = "skyblue";
+    sun.style.top = "60px";
+    sw.play();
+}
+setInterval(moveBirds,1200);
+function moveBirds(){
+    for(var i=1;i<=4;i++){
+        var b = document.getElementById("b"+i);
+        var l = Math.random()*90;
+        var t = Math.random()*60;
+        b.style.left = l + "%";
+        b.style.top = t + "%";
+    }
+}
+</script>
+</body>
+</html>
