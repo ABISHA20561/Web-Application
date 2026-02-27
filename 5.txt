@@ -1,0 +1,144 @@
+1.<!DOCTYPE html>
+<html>
+<head>
+<title>Find Day Name</title>
+</head>
+<body>
+<h3>Enter Date (MM/DD/YYYY)</h3>
+<input type="text" id="dateInput" placeholder="10/11/2009">
+<button onclick="showDay()">Get Day</button>
+<p id="result"></p>
+<script>
+function getDayName(dateString) {
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday",
+                "Thursday", "Friday", "Saturday"];
+
+    let date = new Date(dateString);
+    return days[date.getDay()];
+}
+function showDay() {
+    let input = document.getElementById("dateInput").value;
+    let day = getDayName(input);
+
+    document.getElementById("result").innerHTML =
+        "Day is: " + day;
+}
+</script>
+</body>
+</html>
+2.<!DOCTYPE html>
+<html>
+<body>
+<h3>Same Vowel Start & End (Case Insensitive)</h3>
+<input type="text" id="textInput">
+<button onclick="check()">Check</button>
+<p id="result"></p>
+<script>
+function regexVar() {
+    return /^([aeiou]).*\1$/i;
+}
+function check() {
+    let s = document.getElementById("textInput").value;
+    let re = regexVar();
+    document.getElementById("result").innerHTML =
+        re.test(s);
+}
+</script>
+<body>
+</html>
+3.<!DOCTYPE html>
+<html>
+<body>
+<h3>Prefix Validation</h3>
+<input type="text" id="box" placeholder="Enter name">
+<button onclick="check()">Check</button>
+<p id="ans"></p>
+<script>
+function regexVar() {
+    return /^(Mr|Mrs|Ms|Dr|Er)\.[a-zA-Z]+$/;
+}
+function check() {
+    let s = document.getElementById("box").value;
+    let re = regexVar();
+    let result = re.test(s);
+    document.getElementById("ans").innerHTML = result;
+}
+</script>
+</body>
+</html>
+4.<!DOCTYPE html>
+<html>
+<head>
+<style>
+#btn {
+    width: 96px;
+    height: 48px;
+    font-size: 24px;
+}
+</style>
+</head>
+<body>
+<button id="btn">0</button>
+<script>
+let button = document.getElementById("btn");
+button.onclick = function() {
+    let count = parseInt(button.innerHTML);
+    count = count + 1;
+    button.innerHTML = count;
+};
+</script>
+</body>
+</html>
+5.<!DOCTYPE html>
+<html>
+<head>
+    <title>Even-Odd Array Modifier</title>
+    <style>
+        input, button {
+            font-size: 18px;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        #result {
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h3>Even ×2, Odd ×3 Array Modifier</h3>
+<input type="text" id="arrayInput" placeholder="Enter numbers separated by space">
+<button id="processBtn">Modify Array</button>
+<p id="result"></p>
+<script>
+// Function to modify array
+function modifyArray(arr) {
+    var modified = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            modified.push(arr[i] * 2);
+        } else {
+            modified.push(arr[i] * 3);
+        }
+    }
+    return modified;
+}
+document.getElementById("processBtn").onclick = function() {
+    var input = document.getElementById("arrayInput").value;
+    var arr = [];
+    var parts = input.split(" ");
+    for (var i = 0; i < parts.length; i++) {
+        var num = Number(parts[i]);
+        if (isNaN(num)) {
+            document.getElementById("result").innerHTML = "Please enter valid numbers!";
+            return;
+        }
+        arr.push(num);
+    }
+    var modified = modifyArray(arr);
+    document.getElementById("result").innerHTML = "Modified Array: " + modified.join(" ");
+};
+</script>
+</body>
+</html>
