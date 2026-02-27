@@ -1,0 +1,64 @@
+<html>
+    <head><title> My form </title></head>
+    <body>
+        <h2>Student Enrollment Form</h2>
+        <form action="1.html" method="get" >
+        Student Name:
+        <input type="text" name="sname" placeholder="Enter your name.."required><br><br>
+        Register Number:
+        <input type="text" name="regno" placeholder="9517202306..."><br><br>
+        Password:
+        <input type="password" name="password"><br><br>
+        Gender:
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+        <br><br>
+        Date of Birth:
+        <input type="date" name="dob"><br><br>
+        Blood Group:
+        <input type="text" pattern="(A|B|AB|O)"><br><br>
+        Email ID:
+        <input type="email" name="email"><br><br>
+        Mobile Number:
+        <input type="number" name="mobile"><br><br>
+         <br>
+    <fieldset>
+        <legend><b>Course Details</b></legend>
+        Department:
+        <select name="department">
+            <option value="">--Select Department--</option>
+            <option value="cse">CSE</option>
+            <option value="ece">ECE</option>
+            <option value="eee">EEE</option>
+            <option value="mech">MECH</option>
+        </select>
+        <br><br>
+        Course Selection:
+        <select name="course">
+            <optgroup label="Programming Courses">
+                <option value="c">C Programming</option>
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+            </optgroup>
+            <optgroup label="Core Subjects">
+                <option value="os">Operating Systems</option>
+                <option value="dbms">DBMS</option>
+                <option value="cn">Computer Networks</option>
+            </optgroup>
+        </select>
+        <br><br>
+        Mode of Study:
+        <input type="radio" name="mode" value="online"> Online
+        <input type="radio" name="mode" value="offline"> Offline
+        <br><br>
+        Additional Facilities:<br>
+        <input type="checkbox" name="facility" value="hostel"> Hostel
+        <input type="checkbox" name="facility" value="transport"> Transport
+        <input type="checkbox" name="facility" value="library"> Library
+        <br><br>
+    </fieldset>
+        <input type="submit" >
+        </form>
+    </body>
+</html>
