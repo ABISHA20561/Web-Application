@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Controller Program</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f4f8;
+        }
+        .container {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 350px;
+        }
+        input {
+            padding: 12px;
+            width: 90%;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #output {
+            margin-top: 25px;
+            padding: 10px;
+            min-height: 20px;
+            border-top: 1px solid #eee;
+            font-weight: 600;
+            color: #2c3e50;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Action Menu</h2>
+        <input type="text" id="userInput" placeholder="Type something here...">
+        <div class="btn-group">
+            <button onclick="openNewWindow()">1. Open Window</button>
+            <button onclick="closeNewWindow()">2. Close Window</button>
+            <button onclick="convertToUppercase()">3. Convert to Uppercase</button>
+        </div>
+        <div id="output">Result will appear here...</div>
+    </div>
+    <script>
+        let myWindow;
+        function openNewWindow() {
+            myWindow = window.open("", "NewWindow", "width=400,height=300");
+            myWindow.document.write("<h2>Window Active</h2><p>Opened via Button Click</p>");
+            document.getElementById('output').innerText = "Status: New window opened.";
+        }
+        function closeNewWindow() {
+            if (myWindow && !myWindow.closed) {
+                myWindow.close();
+                document.getElementById('output').innerText = "Status: Window closed.";
+            } else {
+                document.getElementById('output').innerText = "Error: No active window to close.";
+            }
+        }
+        function convertToUppercase() {
+            const inputVal = document.getElementById('userInput').value;
+            const outputDiv = document.getElementById('output');
+            if (inputVal.trim() === "") {
+                outputDiv.innerText = "Error: Please enter some text first!";
+            } else {
+                outputDiv.innerText = "Uppercase: " + inputVal.toUpperCase();
+            }
+        }
+    </script>
+</body>
